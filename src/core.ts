@@ -281,14 +281,20 @@ export function findFiles(fileName: string = "", rootPath: string = ""): string[
   return res;
 }
 
-export function collectPaths(pathList: string[], rootPath: string): string[] {
+export function collectPaths(pathList: string[], rootPath: string, globalScope: boolean): string[] {
   var res: string[] = [];
 	pathList.filter(rawPath => {
 		if(isValue(pathType(rawPath), ["back"]))
 		{
-      exit("ERROR "+ rawPath + " is not a valid path format.\n"
-         + "Path is already not included in the search path.");
-      
+      if(globalScope === true)
+      {
+        res.push(path.join(rootPath, rawPath));
+      }
+      else
+      {
+        exit("ERROR "+ rawPath + " is not a valid path format.\n"
+        + "Path is already not included in the search path.");
+      }    
     }
     else if(isValue(pathType(rawPath), ["fixed"]))
 		{

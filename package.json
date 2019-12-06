@@ -1,7 +1,21 @@
 {
     "name": "massreplace",
-    "version": "0.1.8",
+    "version": "0.1.9",
+    "description": "Mass search and replace utility using a TOML file.",
+    "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com:intermatter/massreplace.git"
+    },
+    "keywords": [
+        "search",
+        "replace"
+    ],
+    "author": "Intermatter IO",
     "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/intermatter/massreplace/issues"
+    },
+    "homepage": "https://github.com/intermatter/massreplace",
     "main": "lib/cli.js",
     "types": "lib/cli.d.ts",
     "scripts": {

@@ -25,7 +25,7 @@ export function massReplace(filePath: string, defaultFile: boolean = false) {
 	const data = method.readToml(filePath);
 	const targets: searchTarget[] = data.targets;
 
-	var globalIgnoreList: string[] = method.collectPaths(data.ignore, rootPath);
+	var globalIgnoreList: string[] = method.collectPaths(data.ignore, rootPath, true);
 	
 	var targetData: processTarget[] = [];
 	targets.forEach(target => {
@@ -40,7 +40,7 @@ export function massReplace(filePath: string, defaultFile: boolean = false) {
 	
 		if(target.path && target.ignore && target.ignore.length > 0)
 		{
-			targetIgnoreList = method.collectPaths(target.ignore, searchPath);
+			targetIgnoreList = method.collectPaths(target.ignore, searchPath, false);
 	
 			if(globalFlag === true) {
 				targetIgnoreList = targetIgnoreList.concat(globalIgnoreList);

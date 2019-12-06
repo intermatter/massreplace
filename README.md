@@ -47,7 +47,7 @@ targets: [array of objects] each of which defines a search and replace target.
     replacement: [string] defines the replacement string.
 
     case: [string = strict] defines the case-sensitivity rule.
-    Each option can be set either by the full option name or the shortcut.
+        Each option can be set either by the full option name or the shortcut.
         - open: ('o')
             Performs a case-insensitive string search.
         - strict: ('s')

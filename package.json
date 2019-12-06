@@ -1,0 +1,25 @@
+{
+    "name": "massreplace",
+    "version": "0.1.7",
+    "license": "MIT",
+    "main": "lib/cli.js",
+    "types": "lib/cli.d.ts",
+    "scripts": {
+        "build": "tsc",
+        "build:clean": "rm -rf lib && npm run build",
+        "replace": "node lib/cli.js",
+        "prepare": "npm run build:clean"
+    },
+    "dependencies": {
+        "@types/node": "^12.12.7",
+        "find": "^0.3.0",
+        "replace": "^1.1.1",
+        "shelljs": "^0.8.3",
+        "toml": "^3.0.0",
+        "tslint": "^5.20.0",
+        "typescript": "^3.6.4"
+    },
+    "bin": {
+        "massreplace": "./lib/cli.js"
+    }
+}

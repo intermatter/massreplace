@@ -448,3 +448,27 @@ export function searchInFiles(searchValue: string, filesList: string[], type: st
   });
   return ret;
 }
+export function getOnly(pathList: string[], type: string = "f")
+{
+  var ret: string[] = [];
+  pathList.forEach(somePath => {
+    if (fs.existsSync(somePath))
+    {
+      if(type === "f")
+      {
+        if (fs.lstatSync(somePath).isFile())
+        {
+          ret.push(somePath);
+        }
+      }
+      else
+      {
+        if(fs.lstatSync(somePath).isDirectory())
+        {
+          ret.push(somePath);
+        }
+      }
+    }
+  });
+  return ret;
+}
